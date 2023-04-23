@@ -1,0 +1,146 @@
+<style>
+form {
+    width: 280px;
+    margin: 20px auto;
+}
+
+form > div {
+    margin: 5px;
+}
+
+.message-box {
+    margin: 20px auto;
+    width: 300px;
+}
+
+.error-message {
+    box-shadow: 0px 0px 25px red;
+    background-color: red;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.success-message {
+    box-shadow: 0px 0px 25px green;
+    background-color: green;
+    border-radius: 20px;
+    text-align: center;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<div>
+
+</div>
+<form action="/form" method="post">
+    <% if(renderMessage) {%>
+    <%if(success) {%>
+        <div class="message-box form-group">
+            <p class="success-message">Готово!</p>
+        </div>
+    <%} else {%>
+        <div class="message-box form-group">
+            <p class="error-message">Помилка. Заповніть всі поля</p>
+        </div>
+    <%}%>
+    <%}%>
+    <div class="form-group">
+        <label for="name">Прізвище, ім'я</label>
+        <br>
+        <input type="text" name="name" id="name">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <br>
+        <input type="text" name="email" id="email">
+    </div>
+    <div class="form-group">
+        <label for="phone">Номер телефону</label>
+        <br>
+        <input type="text" name="phone" id="phone">
+    </div>
+    <div class="form-group">
+        <label for="companyName">Назва компанії</label>
+        <br>
+        <input type="text" name="companyName" id="companyName">
+    </div>
+    <div class="form-group">
+        <label for="aboutCompany">Про компанію</label>
+        <br>
+        <textarea name="aboutCompany" id="aboutCompany"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="targetAudience">Цільова аудиторія</label>
+        <br>
+        <textarea name="targetAudience" id="targetAudience"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="enemies">Конкуренти</label>
+        <br>
+        <textarea name="enemies" id="enemies"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="structure">Ідеї, рекомендація, побажання щодо структури</label>
+        <br>
+        <textarea name="structure" id="structure"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="mobileVersion">Ідеї, рекомендація, побажання щодо мобільної версії сайту</label>
+        <br>
+        <textarea name="mobileVersion" id="mobileVersion"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="keywords">Ключові слова</label>
+        <br>
+        <input type="text" name="keywords" id="keywords">
+    </div>
+    <div class="form-group">
+        <label for="colorsLike">Бажані кольори</label>
+        <br>
+        <textarea name="colorsLike" id="colorsLike"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="colorsDislike">Небажані кольори</label>
+        <br>
+        <textarea name="colorsDislike" id="colorsDislike"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="integrations">Інтеграції</label>
+        <br>
+        <textarea name="integrations" id="integrations"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="time">Термін здачі проекту (місяці)</label>
+        <br>
+        <input type="number" name="time" id="time">
+    </div>
+    <div class="form-group">
+        <label for="devBudget">Бюджет на розробку сайту (грн)</label>
+        <br>
+        <input type="number" name="devBudget" id="devBudget">
+    </div>
+    <div class="form-group">
+        <label for="promotionBudget">Бюджет на просування сайту (грн)</label>
+        <br>
+        <input type="number" name="promotionBudget" id="promotionBudget">
+    </div>
+    <div>
+        <input type="submit" id="send" value="Готово" class="btn btn-primary">
+    </div>
+</form>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script>
+</script>

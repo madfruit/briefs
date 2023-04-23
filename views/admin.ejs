@@ -1,0 +1,83 @@
+<style>
+    form {
+        width: 500px;
+        margin: 20px auto;
+    }
+
+    form > div {
+        margin: 5px;
+    }
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <title>admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<header>
+    Welcome, <%=user.login%>
+    <a class="btn btn-info" href="/admin/logout" id="logout">Log out</a>
+</header>
+<body>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Ім'я</th>
+                <th>e-mail</th>
+                <th>Телефон</th>
+                <th>Назва компанії</th>
+                <th>Про компанію</th>
+                <th>Конкуренти</th>
+                <th>Цільова аудиторія</th>
+                <th>Побажання: структура</th>
+                <th>Побажання: мобільна версія</th>
+                <th>Ключові слова</th>
+                <th>Бажані кольори</th>
+                <th>Небажані кольори</th>
+                <th>Інтеграції</th>
+                <th>Строки</th>
+                <th>Бюджет: розробка</th>
+                <th>Бюджет: просування</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < briefs.length; i++){%>
+                <tr>
+                    <th scope="row"><%=i+1%></th>
+                    <td><%=briefs[i].name%></td>
+                    <td><%=briefs[i].email%></td>
+                    <td><%=briefs[i].phone%></td>
+                    <td><%=briefs[i].companyName%></td>
+                    <td><%=briefs[i].aboutCompany%></td>
+                    <td><%=briefs[i].enemies%></td>
+                    <td><%=briefs[i].targetAudience%></td>
+                    <td><%=briefs[i].structure%></td>
+                    <td><%=briefs[i].mobileVersion%></td>
+                    <td><%=briefs[i].keywords%></td>
+                    <td><%=briefs[i].colorsLike%></td>
+                    <td><%=briefs[i].colorsDislike%></td>
+                    <td><%=briefs[i].integrations%></td>
+                    <td><%=briefs[i].time%></td>
+                    <td><%=briefs[i].devBudget%></td>
+                    <td><%=briefs[i].promotionBudget%></td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script>
+    document.getElementById('logout').addEventListener('click', () => {
+        document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    });
+</script>
